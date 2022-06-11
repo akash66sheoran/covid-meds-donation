@@ -1,23 +1,26 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-empty-pattern */
 import { useEffect } from "react";
 import "./App.css";
-import Header from "./Header.js";
-import Home from "./Home.js";
-import Footer from "./Footer.js";
-import ThanksR from "./ThanksR.js";
-import ThanksD from "./ThanksD.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Checkout from "./Checkout.js";
-import Login from "./Login";
-import Request from "./Request";
-import Donate from "./Donate"
+
+import Header from "./components/Header";
+import Home from "./components/Home.js";
+import Footer from "./components/Footer.js";
+import ThanksR from "./components/ThanksR.js";
+import ThanksD from "./components/ThanksD.js";
+import Checkout from "./components/Checkout.js";
+import Login from "./components/Login";
+import Request from "./components/Request";
+import Donate from "./components/Donate"
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
   useEffect(() => {
 
   }, []);
+
   return (
     <Router>
       <Header />
@@ -30,6 +33,7 @@ function App() {
         <Route path="/ThanksR" element={<ThanksR />} exact />
         <Route path="/ThanksD" element={<ThanksD />} exact />
       </Routes>
+      <ToastContainer />
       <Footer />
     </Router>
   );

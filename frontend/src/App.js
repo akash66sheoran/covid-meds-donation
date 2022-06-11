@@ -12,6 +12,7 @@ import Checkout from "./components/Checkout.js";
 import Login from "./components/Login";
 import Request from "./components/Request";
 import Donate from "./components/Donate"
+import CreateMedicine from "./components/CreateMedicine";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/ThanksR" element={<ThanksR />} exact />
         <Route path="/ThanksD" element={<ThanksD />} exact />
         <Route path="/ThanksO" element={<ThanksO />} exact />
+        <Route path="/medicine/new" element={<CreateMedicine />} exact />
       </Routes>
       <ToastContainer />
       <Footer />

@@ -8,6 +8,9 @@ import {
     ALL_MEDICINES_REQUEST,
     ALL_MEDICINES_SUCCESS,
     ALL_MEDICINES_FAIL,
+    NEW_MEDICINE_REQUEST,
+    NEW_MEDICINE_SUCCESS,
+    NEW_MEDICINE_FAIL,
     CLEAR_ERRORS
 } from '../constants/medicineConstants'
 
@@ -78,6 +81,31 @@ export const donateMedicine = (productData) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: DONATE_MEDICINE_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+export const newMedicine = (productData) => async (dispatch) => {
+    try {
+        dispatch({ type: NEW_MEDICINE_REQUEST })
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const { data } = await axios.post(`/medicine/new`, productData, config)
+
+        dispatch({
+            type: NEW_MEDICINE_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: NEW_MEDICINE_FAIL,
             payload: error.response.data.message
         })
     }

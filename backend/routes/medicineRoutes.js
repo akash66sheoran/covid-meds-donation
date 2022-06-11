@@ -6,7 +6,7 @@ const { requestMedicine, donateMedicine, createMedicine, getAllMedicines, getSin
 router.route('/request').post(requestMedicine)
 router.route('/medicines').get(getAllMedicines)
 router.route('/donate').post(donateMedicine)
-router.route('/medicine/create').post(createMedicine)
+router.route('/medicine/new').post(createMedicine)
 router.route('/medicine/:id').get(getSingleMedicine)
 
 module.exports = router

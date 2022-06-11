@@ -37,7 +37,7 @@ function Request() {
 
     if (success) {
       navigate('/ThanksR');
-      toast.success('Product created successfully', {
+      toast.success('Request received successfully', {
         position: "top-center",
         theme: "colored"
       })

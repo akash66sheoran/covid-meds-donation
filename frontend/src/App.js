@@ -7,6 +7,7 @@ import Home from "./components/Home.js";
 import Footer from "./components/Footer.js";
 import ThanksR from "./components/ThanksR.js";
 import ThanksD from "./components/ThanksD.js";
+import ThanksO from "./components/ThanksO";
 import Checkout from "./components/Checkout.js";
 import Login from "./components/Login";
 import Request from "./components/Request";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/donate" element={<Donate />} exact />
         <Route path="/ThanksR" element={<ThanksR />} exact />
         <Route path="/ThanksD" element={<ThanksD />} exact />
+        <Route path="/ThanksO" element={<ThanksO />} exact />
       </Routes>
       <ToastContainer />
       <Footer />

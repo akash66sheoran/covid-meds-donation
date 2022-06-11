@@ -2,10 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer">
-      <div className="rights">
-        <p>©2020 All rights reserved. dMeds</p>
-      </div>
+    <div className="footer p-3 text-center">
+      <p className="mx-auto">©2022 All rights reserved. dMeds</p>
     </div>
   );
 }

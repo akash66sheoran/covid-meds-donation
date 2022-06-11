@@ -77,3 +77,21 @@ exports.getAllMedicines = async (req, res, next) => {
         console.log(error)
     }
 }
+
+exports.getSingleMedicine = async (req, res, next) => {
+    try {
+
+        const medicine = await Medicine.findById(req.params.id);
+
+        if (!medicine) {
+            return res.status(404).json("Medicine not found")
+        }
+
+        res.status(200).json({
+            success: true,
+            medicine,
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}

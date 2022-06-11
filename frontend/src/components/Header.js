@@ -1,8 +1,12 @@
 import React from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+import { useSelector } from 'react-redux'
+
 import { Link } from "react-router-dom";
 function Header() {
+
+  const { cartItems } = useSelector(state => state.cart)
 
   return (
     <div className="navbar navbar-color p-3">
@@ -20,7 +24,7 @@ function Header() {
         <Link className="link text-white mx-3" to="/checkout">
           <ShoppingCartIcon />
           <span>
-            0
+            {cartItems ? cartItems.length : 0}
           </span>
         </Link>
       </div>

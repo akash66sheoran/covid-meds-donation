@@ -5,31 +5,23 @@ import { Link } from "react-router-dom";
 function Header() {
 
   return (
-    <div className="header">
-      <Link className="link" to="/">
+    <div className="navbar navbar-color p-3">
+      <Link className="link ms-3 text-white" to="/">
         logo
       </Link>
 
-      <div className="header__nav">
-        <Link className="link" to="/request">
-          <div className="header__option">
-            <span className="header__optionLineOne">Request</span>
-            <span className="header__optionLineTwo">Medicine</span>
-          </div>
+      <div className="">
+        <Link className="link text-white mx-3" to="/request">
+          Request
         </Link>
-        <Link className="link" to="/donate">
-          <div className="header__option">
-            <span className="header__optionLineOne">Donate</span>
-            <span className="header__optionLineTwo">Medicine</span>
-          </div>
+        <Link className="link text-white mx-3" to="/donate">
+          Donate
         </Link>
-        <Link className="link" to="/checkout">
-          <div className="header__optionBasket">
-            <ShoppingCartIcon />
-            <span className="header__optionLineTwo header__basketCount">
-              0
-            </span>
-          </div>
+        <Link className="link text-white mx-3" to="/checkout">
+          <ShoppingCartIcon />
+          <span>
+            0
+          </span>
         </Link>
       </div>
     </div>

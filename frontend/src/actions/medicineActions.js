@@ -5,10 +5,33 @@ import {
     DONATE_MEDICINE_REQUEST,
     DONATE_MEDICINE_SUCCESS,
     DONATE_MEDICINE_FAIL,
+    ALL_MEDICINES_REQUEST,
+    ALL_MEDICINES_SUCCESS,
+    ALL_MEDICINES_FAIL,
     CLEAR_ERRORS
 } from '../constants/medicineConstants'
 
 import axios from 'axios'
+
+export const getMedicines = () => async (dispatch) => {
+    try {
+
+        dispatch({ type: ALL_MEDICINES_REQUEST })
+
+        const { data } = await axios.get('/medicines')
+
+        dispatch({
+            type: ALL_MEDICINES_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: ALL_MEDICINES_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
 
 export const requestMedicine = (productData) => async (dispatch) => {
     try {

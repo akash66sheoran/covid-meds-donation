@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // route imports
-const requestRoute = require('./routes/requestRoutes')
+const requestRoute = require('./routes/medicineRoutes')
 app.use(requestRoute)
 
 app.listen(process.env.PORT, () => {

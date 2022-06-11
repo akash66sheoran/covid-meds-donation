@@ -1,4 +1,6 @@
 const Donate = require('../models/donateModel')
+const Request = require('../models/requestModel')
+const Medicine = require('../models/medicineModel')
 
 exports.requestMedicine = async (req, res, next) => {
     try {
@@ -39,5 +41,39 @@ exports.donateMedicine = async (req, res, next) => {
     } catch (error) {
         console.log(error)
         // next(error)
+    }
+}
+
+exports.createMedicine = async (req, res, next) => {
+    try {
+        const { medicine, expiry, image } = req.body;
+
+        const med = await Medicine.create({
+            medicine,
+            expiry,
+            image
+        })
+
+        res.status(200).json({
+            success: true,
+            med
+        })
+
+    } catch (error) {
+        console.log(error)
+        // next(error)
+    }
+}
+
+exports.getAllMedicines = async (req, res, next) => {
+    try {
+        let medicines = await Medicine.find()
+
+        res.status(200).json({
+            success: true,
+            medicines,
+        })
+    } catch (error) {
+        console.log(error)
     }
 }

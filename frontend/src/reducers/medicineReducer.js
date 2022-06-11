@@ -5,6 +5,9 @@ import {
     DONATE_MEDICINE_REQUEST,
     DONATE_MEDICINE_SUCCESS,
     DONATE_MEDICINE_FAIL,
+    ALL_MEDICINES_REQUEST,
+    ALL_MEDICINES_SUCCESS,
+    ALL_MEDICINES_FAIL,
     CLEAR_ERRORS
 } from '../constants/medicineConstants'
 
@@ -54,6 +57,37 @@ export const donateMedicineReducer = (state = { medicine: {} }, action) => {
             }
 
         case DONATE_MEDICINE_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
+    }
+}
+
+export const medicinesReducer = (state = { medicines: [] }, action) => {
+    switch (action.type) {
+        case ALL_MEDICINES_REQUEST:
+            return {
+                loading: true,
+                medicines: []
+            }
+
+        case ALL_MEDICINES_SUCCESS:
+            return {
+                loading: false,
+                medicines: action.payload.medicines
+            }
+
+        case ALL_MEDICINES_FAIL:
             return {
                 loading: false,
                 error: action.payload

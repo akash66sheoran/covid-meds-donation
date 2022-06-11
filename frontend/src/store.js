@@ -2,11 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import { requestMedicineReducer, donateMedicineReducer } from './reducers/medicineReducer'
+import { requestMedicineReducer, donateMedicineReducer, medicinesReducer } from './reducers/medicineReducer'
 
 const reducer = combineReducers({
     requestMedicine: requestMedicineReducer,
-    donateMedicine: donateMedicineReducer
+    donateMedicine: donateMedicineReducer,
+    medicines: medicinesReducer
 })
 
 let initialState = {

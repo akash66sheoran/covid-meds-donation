@@ -119,7 +119,7 @@ function Donate() {
               type="submit"
               className="btn btn-block btn-primary mt-3"
             >
-              Request
+              Donate
             </button>
 
           </form>
